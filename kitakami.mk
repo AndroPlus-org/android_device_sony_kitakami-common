@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from msm8974-common
-$(call inherit-product, device/sony/msm8974-common/msm8974.mk)
+# inherit from msm8994-common
+$(call inherit-product, device/sony/msm8994-common/msm8994.mk)
 
-COMMON_PATH := device/sony/shinano-common
+COMMON_PATH := device/sony/kitakami-common
 
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.qualcomm.location \
-    gps.msm8974
+    gps.msm8994
 
 # IPC Security Config
 PRODUCT_COPY_FILES += \
@@ -83,13 +83,13 @@ PRODUCT_COPY_FILES += \
 
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.msm8974
+    keystore.msm8994
 
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(COMMON_PATH)/rootdir/system/usr/keylayout/mhl-rcp.kl:system/usr/keylayout/mhl-rcp.kl \
-    $(COMMON_PATH)/rootdir/system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl:system/usr/keylayout/msm8974-taiko-mtp-snd-card_Button_Jack.kl
+    $(COMMON_PATH)/rootdir/system/usr/keylayout/msm8994-taiko-mtp-snd-card_Button_Jack.kl:system/usr/keylayout/msm8994-taiko-mtp-snd-card_Button_Jack.kl
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -186,4 +186,4 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bc
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Include non-opensource parts
-$(call inherit-product, vendor/sony/shinano-common/shinano-common-vendor.mk)
+$(call inherit-product, vendor/sony/kitakami-common/kitakami-common-vendor.mk)

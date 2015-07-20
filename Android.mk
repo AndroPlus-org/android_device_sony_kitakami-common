@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_VENDOR_PLATFORM),shinano)
+ifeq ($(BOARD_VENDOR_PLATFORM),kitakami)
     include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
     $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9320; \

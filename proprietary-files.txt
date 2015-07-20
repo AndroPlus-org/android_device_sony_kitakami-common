@@ -1,5 +1,5 @@
 # Audio
-lib/hw/audio.primary.msm8974.so
+lib/hw/audio.primary.msm8994.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
@@ -291,7 +291,7 @@ etc/firmware/tzsuntory.b03
 etc/firmware/tzsuntory.mdt
 
 # Sensors
-vendor/lib/hw/sensors.msm8974.so
+vendor/lib/hw/sensors.msm8994.so
 vendor/lib/libsensor_reg.so
 
 # TA

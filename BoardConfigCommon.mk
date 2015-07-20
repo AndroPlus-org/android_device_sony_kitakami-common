@@ -12,18 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from msm8974-common
-include device/sony/msm8974-common/BoardConfigCommon.mk
+# inherit from msm8994-common
+include device/sony/msm8994-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/sony/shinano-common/include
+TARGET_SPECIFIC_HEADER_PATH += device/sony/kitakami-common/include
 
 # Platform
-BOARD_VENDOR_PLATFORM := shinano
+BOARD_VENDOR_PLATFORM := kitakami
 
 # Kernel information
 BOARD_KERNEL_BASE     := 0x00000000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE  := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_CMDLINE  := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 dwc3_msm.prop_chg_detect=Y coherent_pool=2M
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_DTB_EXTRA_FLAGS := --force-v2
@@ -34,8 +34,8 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/shinano-common/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/sony/shinano-common/bluetooth/vnd_shinano.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/kitakami-common/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/sony/kitakami-common/bluetooth/vnd_kitakami.txt
 
 # Camera
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
@@ -43,7 +43,7 @@ BOARD_CAMERA_HAVE_ISO := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # CM Hardware
-BOARD_HARDWARE_CLASS += device/sony/shinano-common/cmhw
+BOARD_HARDWARE_CLASS += device/sony/kitakami-common/cmhw
 
 # Dumpstate
 BOARD_LIB_DUMPSTATE := libdumpstate.sony
@@ -52,11 +52,11 @@ BOARD_LIB_DUMPSTATE := libdumpstate.sony
 TARGET_PROVIDES_GPS_LOC_API := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_shinano
+TARGET_INIT_VENDOR_LIB := libinit_kitakami
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/sony/shinano-common/sepolicy
+    device/sony/kitakami-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     mlog_qmi.te \
@@ -90,7 +90,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2671771648
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/sony/shinano-common/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/sony/kitakami-common/rootdir/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
